@@ -61,8 +61,8 @@ function showFormFruitTooltip() {
 
     const svg = d3.select("body")
     .append("svg")
-    .attr("width", 148)
-    .attr("height", 130)
+    .attr("width", 200)
+    .attr("height", 200)
     .style("position", "absolute")
     svg.append("g")
     .attr("class", "annotation-group")
