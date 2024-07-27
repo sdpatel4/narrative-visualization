@@ -4,7 +4,7 @@ async function filterFreshFruits() {
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (!f.Form === "Fresh") {
+            if (f.Form === "Fresh") {
                 freshFruits.push(f);
             }
         });
