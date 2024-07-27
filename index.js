@@ -70,6 +70,6 @@ function showFormFruitTooltip() {
     .call(makeAnnotations);
 }
 
-function filterFruit(e) {
-    console.log(e);
+function filterFruit(val) {
+    console.log(val);
 }
