@@ -4,21 +4,12 @@
         <script src='https://d3js.org/d3.v5.min.js'></script>
         <script src="index.js"></script>
         <script>
-            const jsonUrl = 'data.json';
-
-            // Load the JSON file
-            d3.json(jsonUrl).then(function(data) {
-                data.forEach(d => {
-                    const container = d3.select("#container");
-
-                    container.selectAll("p")
-                        .data(data)
-                        .enter()
-                        .append("p")
-                        .text(d => `Name: ${d.Fruit}`);
-                });
-            });
-            // d3.select("svg").append("g").attr("class", "annotation-group").call(makeAnnotations)
+            const freshFruits = filterFreshFruits();
+            container.selectAll("p")
+            .data(freshFruits)
+            .enter()
+            .append("p")
+            .text(d => `${d.Fruit}`);
         </script>
         <h1>Hello World</h1>
         <div id="container"></div>
