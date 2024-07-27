@@ -9,17 +9,14 @@
             showFormFruitTooltip();
         </script>
         <h1>Fruit prices in 2022</h1>
-        <div style="display: flex">
-            <label for="fruitform">Filter by fruit form</label>
-            <select id="fruitform" style="margin-top: 100px;" onchange="filterFruitByForm(this.value)">
-                <option>Please choose a form</option>
-                <option value="Fresh">Fresh</option>
-                <option value="Canned">Canned</option>
-                <option value="Juice">Juice</option>
-                <option value="Dried">Dried</option>
-                <option value="Frozen">Frozen</option>
-            </select>
-        </div>
+        <select id="fruitform" style="margin-top: 100px;" onchange="filterFruitByForm(this.value)">
+            <option>Please choose a form</option>
+            <option value="Fresh">Fresh</option>
+            <option value="Canned">Canned</option>
+            <option value="Juice">Juice</option>
+            <option value="Dried">Dried</option>
+            <option value="Frozen">Frozen</option>
+        </select>
         <div id="container"></div>
     </body>
 </html>
