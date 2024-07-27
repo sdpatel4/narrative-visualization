@@ -9,6 +9,13 @@ async function filterFreshFruits() {
             }
         });
     });
+
+    const container = d3.select("#container");
+    container.selectAll("p")
+    .data(freshFruits)
+    .enter()
+    .append("p")
+    .text(d => `${d.Fruit}`);
     
     return freshFruits;
 }
