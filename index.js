@@ -6,9 +6,12 @@ function filterFreshFruits() {
         data.forEach(f => {
             if (!f.Fruit.includes(",")) {
                 freshFruits.push(f);
+                console.log("here");
             }
         });
     });
+
+    console.log(freshFruits);
     
     return freshFruits;
 }
