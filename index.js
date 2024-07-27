@@ -8,7 +8,7 @@ function filterFreshFruits() {
             console.log(f.Fruit);
             console.log(!f.Fruit.includes(","));
             if (!f.Fruit.includes(",")) {
-                freshFruits.concat(f);
+                freshFruits.push(f);
             }
         });
     });
