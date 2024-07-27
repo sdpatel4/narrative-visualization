@@ -57,7 +57,20 @@ function showFormFruitTooltip() {
     ];
 
     const makeAnnotations = d3.annotation()
-    .annotations(annotations);
+    .annotations(annotations).on("subjectover", function() {
+        d3.select(this).select(".annotation-note")
+          .append("button")
+          .attr("id", "nextButton")
+          .text("Next")
+          .on("click", function() {
+            if (currentAnnotationIndex < annotations.length - 1) {
+              currentAnnotationIndex++;
+              showAnnotation(currentAnnotationIndex);
+            } else {
+              svg.selectAll(".annotation-group").remove();
+            }
+          });
+      });
 
     const svg = d3.select("body")
     .append("svg")
