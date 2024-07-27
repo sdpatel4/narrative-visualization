@@ -69,7 +69,3 @@ function showFormFruitTooltip() {
     .attr("class", "annotation-group")
     .call(makeAnnotations);
 }
-
-function filterFruit(val) {
-    console.log(val);
-}
