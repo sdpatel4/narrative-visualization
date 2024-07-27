@@ -5,6 +5,7 @@
         <script src="index.js"></script>
         <script>
             const freshFruits = filterFreshFruits();
+            console.log(freshFruits);
             const container = d3.select("#container");
             container.selectAll("p")
             .data(freshFruits)
