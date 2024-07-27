@@ -6,34 +6,7 @@
         <script src="index.js"></script>
         <script>
             displayAllFruit();
-
-            const annotations = [
-                {
-                    note: {
-                    label: "This is the fruit form dropdown",
-                    title: "Fruit form dropdown"
-                    },
-                    x: 200,
-                    y: 160,
-                    dy: -50,
-                    dx: 50
-                }
-            ];
-
-        const makeAnnotations = d3.annotation()
-        .annotations(annotations);
-
-        const svg = d3.select("body")
-        .append("svg")
-        .attr("width", window.innerWidth)
-        .attr("height", window.innerHeight)
-        .style("position", "absolute")
-        .style("top", 0)
-        .style("left", 0);
-        svg.append("g")
-        .attr("class", "annotation-group")
-        .call(makeAnnotations);
-
+            showFormFruitTooltip();
         </script>
         <h1>Fruit prices in 2022</h1>
         <button id="fruitform">Fruit form</button>

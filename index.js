@@ -41,3 +41,31 @@ async function displayAllFruit() {
     
     return fruit;
 }
+
+function showFormFruitTooltip() {
+    const annotations = [
+        {
+            note: {
+            title: "",
+            label: "Use this dropdown to update the fruit form"
+            },
+            x: 200,
+            y: 160,
+            dy: -50,
+            dx: 50
+        }
+    ];
+
+    const makeAnnotations = d3.annotation()
+    .annotations(annotations);
+
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", window.innerWidth)
+    .attr("height", window.innerHeight)
+    .style("position", "absolute")
+    .style("right", 100);
+    svg.append("g")
+    .attr("class", "annotation-group")
+    .call(makeAnnotations);
+}
