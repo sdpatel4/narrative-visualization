@@ -10,7 +10,7 @@
         </script>
         <h1>Fruit prices in 2022</h1>
         <label for="fruitform">Filter by fruit form</label>
-        <select id="fruitform" style="margin-top: 100px;">
+        <select id="fruitform" style="margin-top: 100px;" onchange="filterFruit($event)">
             <option>Please choose a form</option>
             <option value="Fresh">Fresh</option>
             <option value="Canned">Canned</option>
