@@ -1,6 +1,8 @@
 const jsonUrl = 'data.json';
 
 async function filterFruitByForm(form) {
+    d3.select("#container").html = "";
+
     const fruit = [];
 
     await d3.json(jsonUrl).then(function(data) {
