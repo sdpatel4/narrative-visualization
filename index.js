@@ -4,7 +4,7 @@ function filterFreshFruits() {
 
     d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (!f.includes(",")) {
+            if (!f.Fruit.includes(",")) {
                 freshFruits.append(f);
             }
         });
