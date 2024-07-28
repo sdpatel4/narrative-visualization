@@ -27,7 +27,7 @@ async function filterFruitByForm(form) {
 }
 
 async function filterFruitByPrice(price) {
-    d3.select("#container").html("");
+    d3.select("#container").remove();
     globalPrice = price;
 
     const fruit = [];
@@ -140,5 +140,5 @@ function showRetailPriceSliderTooltip() {
 }
 
 function hideTooltip() {
-    d3.selectAll("svg").html("");
+    d3.selectAll("svg").remove();
 }
