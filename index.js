@@ -52,7 +52,10 @@ function updateResults(fruit) {
         .data(fruit)
         .enter()
         .append("p")
-        .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+        // .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+        .text(d => `${d.Fruit}`)
+        .append("p")
+        .text(d => `${d.RetailPrice}`);
     } else {
         container.html("");
         container.select("p")
