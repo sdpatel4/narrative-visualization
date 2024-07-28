@@ -104,8 +104,8 @@ function showFormFruitTooltip() {
     });
 }
 
-function showResultsTooltip() { 
-    d3.select('svg').html("");
+function showResultsTooltip() {
+    d3.select('svg').remove();
 
     const annotations = [
         {
@@ -143,7 +143,7 @@ function showResultsTooltip() {
 }
 
 function showRetailPriceSliderTooltip() {
-    d3.select('svg').html("");
+    d3.select('svg').remove();
 
     const annotations = [
         {
