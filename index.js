@@ -104,3 +104,23 @@ function showRetailPriceSliderTooltip() {
 function hideTooltip() {
     d3.select("svg").html("");
 }
+
+function getMaxRetailPrice() {
+    let max = 0;
+
+    await d3.json(jsonUrl).then(function(data) {
+        max = Math.max(data.RetailPrice, max);
+    });
+
+    return max;
+}
+
+function getMinRetailPrice() {
+    let min = 1000;
+
+    await d3.json(jsonUrl).then(function(data) {
+        min = Math.min(data.RetailPrice, min);
+    });
+
+    return min;
+}

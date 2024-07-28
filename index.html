@@ -9,19 +9,25 @@
             showFormFruitTooltip();
         </script>
         <h1>Fruit prices in 2022</h1>
-        <select
-            id="fruitform" 
-            style="margin-top: 100px;"
-            onchange="filterFruitByForm(this.value)"
-            onclick="showRetailPriceSliderTooltip()"
-        >
-            <option>Please choose a form</option>
-            <option value="Fresh">Fresh</option>
-            <option value="Canned">Canned</option>
-            <option value="Juice">Juice</option>
-            <option value="Dried">Dried</option>
-            <option value="Frozen">Frozen</option>
-        </select>
+        <div style="display: flex;">
+            <select
+                id="fruitform" 
+                style="margin-top: 100px;"
+                onchange="filterFruitByForm(this.value)"
+                onclick="showRetailPriceSliderTooltip()"
+            >
+                <option>Please choose a form</option>
+                <option value="Fresh">Fresh</option>
+                <option value="Canned">Canned</option>
+                <option value="Juice">Juice</option>
+                <option value="Dried">Dried</option>
+                <option value="Frozen">Frozen</option>
+            </select>
+            <div>
+                <label for="retailPrice">Retail price in dollars: </label>
+                <input type="range" id="retailPrice" name="retailPrice" min="getMinRetailPrice()" max="getMaxRetailPrice()" />
+            </div>
+        </div>
         <div id="container" style="display: grid; grid-template-columns: 1fr 1fr 1fr;"></div>
     </body>
 </html>
