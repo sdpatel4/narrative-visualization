@@ -126,12 +126,12 @@ function showResultsTooltip() {
     const svg = d3.select("body")
     .append("svg")
     .attr("width", 250)
-    .attr("height", 150)
+    .attr("height", 200)
     .style("position", "absolute")
-    .style("transform", "translateX(200px)")
+    .style("transform", "translate(600px, 10px)")
     .style("top", "50px");
     svg.append("g")
-    .style("transform", "translateX(-120px)")
+    .style("transform", "translate(-120px, 20px)")
     .attr("class", "annotation-group")
     .call(makeAnnotations);
 
