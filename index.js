@@ -2,31 +2,24 @@ const jsonUrl = 'data.json';
 let globalForm = "";
 let globalPrice = 1000;
 let firstTime = true;
-const fruit = displayAllFruit();
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
     globalForm = form;
 
-    // const fruit = [];
+    const fruit = [];
 
-    // await d3.json(jsonUrl).then(function(data) {
-    //     data.forEach(f => {
-    //         if ((f.Form === form || form === "Please choose a form") && f.RetailPrice <= globalPrice) {
-    //             fruit.push(f);
-    //         }
-    //     });
-    // });
-
-    const filteredFuit = fruit.filter(f => {
-        if ((f.Form === form || form === "Please choose a form") && f.RetailPrice <= globalPrice) {
-            fruit.push(f);
-        }
+    await d3.json(jsonUrl).then(function(data) {
+        data.forEach(f => {
+            if ((f.Form === form || form === "Please choose a form") && f.RetailPrice <= globalPrice) {
+                fruit.push(f);
+            }
+        });
     });
 
     const container = d3.select("#container");
     container.selectAll("p")
-    .data(filteredFuit)
+    .data(fruit)
     .enter()
     .append("p")
     .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
@@ -38,25 +31,19 @@ async function filterFruitByPrice(price) {
     d3.select("#container").html("");
     globalPrice = price;
 
-    // const fruit = [];
+    const fruit = [];
 
-    // await d3.json(jsonUrl).then(function(data) {
-    //     data.forEach(f => {
-    //         if (f.RetailPrice <= price && (f.Form === globalForm || globalForm === "Please choose a form")) {
-    //             fruit.push(f);
-    //         }
-    //     });
-    // });
-    
-    const filteredFuit = fruit.filter(f => {
-        if (f.RetailPrice <= price && (f.Form === globalForm || globalForm === "Please choose a form")) {
-            fruit.push(f);
-        }
+    await d3.json(jsonUrl).then(function(data) {
+        data.forEach(f => {
+            if (f.RetailPrice <= price && (f.Form === globalForm || globalForm === "Please choose a form")) {
+                fruit.push(f);
+            }
+        });
     });
 
     const container = d3.select("#container");
     container.selectAll("p")
-    .data(filteredFuit)
+    .data(fruit)
     .enter()
     .append("p")
     .text(d => `${d.Fruit},  price: ${d.RetailPrice}`);
