@@ -101,7 +101,7 @@ function showRetailPriceSliderTooltip() {
     .call(makeAnnotations);
 }
 
-async function hideTooltip() {
+function hideTooltip() {
     d3.select("svg").html("");
 }
 
@@ -115,7 +115,7 @@ async function getMaxRetailPrice() {
     return max;
 }
 
-function getMinRetailPrice() {
+async function getMinRetailPrice() {
     let min = 1000;
 
     await d3.json(jsonUrl).then(function(data) {
