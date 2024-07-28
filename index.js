@@ -54,7 +54,7 @@ function updateResults(fruit) {
         .append("p")
         .text(d => `${d.Fruit}`)
         .append("p")
-        .text(d => `Price ${d.CupEquivalentUnit}: ${d.RetailPrice}`);
+        .text(d => `Price ${d.RetailPriceUnit}: ${d.RetailPrice}`);
     } else {
         container.html("");
         container.select("p")
