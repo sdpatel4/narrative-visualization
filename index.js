@@ -61,6 +61,10 @@ function updateResults(fruit) {
         .append("p")
         .text("No results match your filter criteria");
     }
+
+    if (isTutorialComplete()) {
+        updateSubheaderText();
+    }
 }
 
 async function displayAllFruit() {
@@ -157,7 +161,8 @@ function showResultsTooltip() {
         d3.select("#fruitform").attr("disabled", null);
         d3.select("#retailPrice").attr("disabled", null);
         hideTooltip();
-        showSubheaderText();
+        updateSubheaderText();
+        d3.select("#toolbar").attr("margin-top", "0");
     });
 }
 
@@ -203,10 +208,15 @@ function showRetailPriceSliderTooltip() {
     });
 }
 
-function showSubheaderText() {
+function isTutorialComplete() {
+    return isResultsTooltipClicked && isPriceTutorialClicked && isFormTooltipClicked;
+}
+
+function updateSubheaderText() {
+    const form = globalForm === DEFAULT_FORM ? "all" : `${globalForm}`;
     d3.select("h1")
-    .append("h2")
-    .text("Header 2");
+    .append("h4")
+    .text(`Showing ${form} fruits below the price of ${globalPrice}`);
 }
 
 function hideTooltip() {
