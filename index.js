@@ -91,8 +91,8 @@ function showRetailPriceSliderTooltip() {
 
     const svg = d3.select("body")
     .append("svg")
-    .attr("width", 200)
-    .attr("height", 200)
+    .attr("width", 250)
+    .attr("height", 150)
     .style("position", "absolute")
     svg.append("g")
     .attr("class", "annotation-group")
