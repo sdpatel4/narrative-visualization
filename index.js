@@ -111,7 +111,7 @@ function showResultsTooltip() {
         {
             note: {
             title: "",
-            label: "Results below contain the fruit name and price, filtered by the fruit form and price criteria."
+            label: "Results below contain the fruit name and price. Click to continue."
             },
             x: 200,
             y: 160,
