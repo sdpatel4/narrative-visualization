@@ -35,7 +35,7 @@ async function filterFruitByPrice(price) {
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (f.RetailPrice <= price && f.Form === globalForm) {
+            if (f.RetailPrice <= price && (f.Form === globalForm || globalForm === "Please choose a form")) {
                 fruit.push(f);
             }
         });
@@ -133,24 +133,4 @@ function showRetailPriceSliderTooltip() {
 
 function hideTooltip() {
     d3.select("svg").html("");
-}
-
-async function getMaxRetailPrice() {
-    let max = 0;
-
-    await d3.json(jsonUrl).then(function(data) {
-        max = Math.max(data.RetailPrice, max);
-    });
-
-    return max;
-}
-
-async function getMinRetailPrice() {
-    let min = 1000;
-
-    await d3.json(jsonUrl).then(function(data) {
-        min = Math.min(data.RetailPrice, min);
-    });
-
-    return min;
 }
