@@ -23,11 +23,10 @@ async function filterFruitByForm(form) {
     .append("p")
     .text(d => `${d.Fruit}`);
     
-    return fruit;
+    return fruit.length > 0 ? ["No results found"] : fruit;
 }
 
 async function filterFruitByPrice(price) {
-    console.log(price);
     d3.select("#container").html("");
     globalPrice = price;
 
@@ -48,7 +47,7 @@ async function filterFruitByPrice(price) {
     .append("p")
     .text(d => `${d.Fruit}`);
     
-    return fruit;
+    return fruit.length > 0 ? ["No results found"] : fruit;
 }
 
 async function displayAllFruit() {
