@@ -24,7 +24,15 @@
             </select>
             <div>
                 <label for="retailPrice">Retail price in dollars: </label>
-                <input disabled="true" type="range" id="retailPrice" name="retailPrice" min="getMinRetailPrice()" max="getMaxRetailPrice()" />
+                <input 
+                    disabled="true"
+                    type="range"
+                    id="retailPrice"
+                    name="retailPrice"
+                    min="getMinRetailPrice()"
+                    max="getMaxRetailPrice()"
+                    oninput="filterFruitByPrice(this.value)"
+                />
             </div>
         </div>
         <div id="container" style="display: grid; grid-template-columns: 1fr 1fr 1fr;"></div>
