@@ -5,6 +5,7 @@ let globalPrice = 4.2;
 let isPriceTutorialClicked = false;
 let isFormTooltipClicked = false;
 let isResultsTooltipClicked = false;
+let isOverviewTooltipClicked = false;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
@@ -82,12 +83,54 @@ async function displayAllFruit() {
     return fruit;
 }
 
+/**  */
+function showFirstTooltip() {
+    if (isOverviewTooltipClicked) {
+        return;
+    } else {
+        isOverviewTooltipClicked = true;
+    }
+
+    const annotations = [
+        {
+            note: {
+            title: "",
+            label: "The cost to stay healthy is higher than it ever was. Let's find fruits within your budget using this tool."
+            },
+            x: 200,
+            y: 160,
+            dy: 50,
+            dx: 50
+        }
+    ];
+
+    const makeAnnotations = d3.annotation()
+    .annotations(annotations);
+
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", 250)
+    .attr("height", 150)
+    .style("position", "absolute")
+    .style("top", 50);
+    svg.append("g")
+    .attr("class", "annotation-group")
+    .style("transform", "translateX(-150px)")
+    .call(makeAnnotations);
+
+    svg.on("click", function() {
+        showFormFruitTooltip();
+    });
+}
+
 function showFormFruitTooltip() {
     if (isFormTooltipClicked) {
         return;
     } else {
         isFormTooltipClicked = true;
     }
+
+    d3.select('svg').remove();
 
     const annotations = [
         {
@@ -210,7 +253,7 @@ function showRetailPriceSliderTooltip() {
 }
 
 function isTutorialComplete() {
-    return isResultsTooltipClicked && isPriceTutorialClicked && isFormTooltipClicked;
+    return isOverviewTooltipClicked && isResultsTooltipClicked && isPriceTutorialClicked && isFormTooltipClicked;
 }
 
 function updateSubheaderText() {
