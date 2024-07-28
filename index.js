@@ -47,6 +47,8 @@ async function filterFruitByPrice(price) {
     .enter()
     .append("p")
     .text(d => `${d.Fruit},  price: ${d.RetailPrice}`);
+
+    console.log(fruit);
     
     return fruit;
 }
