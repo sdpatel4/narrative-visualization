@@ -96,6 +96,11 @@ function showRetailPriceSliderTooltip() {
     .style("position", "absolute")
     svg.append("g")
     .attr("class", "annotation-group")
-    .style("transform", "translateX(-150px)")
+    .style("transform", "translateX(300px)")
+    .style("top", "20px")
     .call(makeAnnotations);
+}
+
+function hideTooltip() {
+    d3.select("svg").html("");
 }
