@@ -21,7 +21,7 @@ async function filterFruitByForm(form) {
     .data(fruit)
     .enter()
     .append("p")
-    .text(d => `${d.Fruit}`);
+    .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
     
     return fruit;
 }
@@ -45,7 +45,7 @@ async function filterFruitByPrice(price) {
     .data(fruit)
     .enter()
     .append("p")
-    .text(d => `${d.Fruit}`);
+    .text(d => `${d.Fruit},  price: ${d.RetailPrice}`);
     
     return fruit;
 }
@@ -64,7 +64,7 @@ async function displayAllFruit() {
     .data(fruit)
     .enter()
     .append("p")
-    .text(d => `${d.Fruit}`);
+    .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
     
     return fruit;
 }
