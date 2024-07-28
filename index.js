@@ -1,6 +1,7 @@
 const jsonUrl = 'data.json';
 let globalForm = "";
 let globalPrice = 1000;
+const firstTime = true;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
@@ -103,6 +104,12 @@ function showFormFruitTooltip() {
 }
 
 function showRetailPriceSliderTooltip() {
+    if (firstTime) {
+        firstTime = false;
+    } else {
+        return;
+    }
+    
     d3.select('svg').html("");
 
     const annotations = [
