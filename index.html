@@ -9,7 +9,13 @@
             showFormFruitTooltip();
         </script>
         <h1>Fruit prices in 2022</h1>
-        <select disabled="true" id="fruitform" style="margin-top: 100px;" onchange="filterFruitByForm(this.value)">
+        <svg></svg>
+        <select
+            id="fruitform" 
+            style="margin-top: 100px;"
+            onchange="filterFruitByForm(this.value)"
+            onclick="showRetailPriceSliderTooltip()"
+        >
             <option>Please choose a form</option>
             <option value="Fresh">Fresh</option>
             <option value="Canned">Canned</option>

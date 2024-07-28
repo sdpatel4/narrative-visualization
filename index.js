@@ -47,7 +47,7 @@ function showFormFruitTooltip() {
         {
             note: {
             title: "",
-            label: "Use this dropdown to update the fruit form. Click me to continue."
+            label: "Use this dropdown to filter by fruit form. Click to continue."
             },
             x: 200,
             y: 160,
@@ -56,12 +56,7 @@ function showFormFruitTooltip() {
         }
     ];
 
-    const calloutWithArrow = d3.annotationCustomType(d3.annotationCalloutElbow, {
-        connector: { end: "arrow" },
-    });
-
     const makeAnnotations = d3.annotation()
-    .type(calloutWithArrow)
     .annotations(annotations);
 
     const svg = d3.select("body")
@@ -73,6 +68,34 @@ function showFormFruitTooltip() {
     .attr("class", "annotation-group")
     .style("transform", "translateX(-150px)")
     .call(makeAnnotations);
+}
 
-    // add .onclick -> 
+function showRetailPriceSliderTooltip() {
+    d3.select('svg').html("");
+
+    const annotations = [
+        {
+            note: {
+            title: "",
+            label: "Use this dropdown to filter by retail price. Interact to continue."
+            },
+            x: 200,
+            y: 160,
+            dy: -50,
+            dx: 50
+        }
+    ];
+
+    const makeAnnotations = d3.annotation()
+    .annotations(annotations);
+
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", 200)
+    .attr("height", 200)
+    .style("position", "absolute")
+    svg.append("g")
+    .attr("class", "annotation-group")
+    .style("transform", "translateX(-150px)")
+    .call(makeAnnotations);
 }
