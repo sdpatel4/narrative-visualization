@@ -23,7 +23,7 @@ async function filterFruitByForm(form) {
     .append("p")
     .text(d => `${d.Fruit}`);
     
-    return fruit.length > 0 ? fruit : ["No results found"];
+    return fruit;
 }
 
 async function filterFruitByPrice(price) {
@@ -47,7 +47,7 @@ async function filterFruitByPrice(price) {
     .append("p")
     .text(d => `${d.Fruit}`);
     
-    return fruit.length > 0 ? fruit : ["No results found"];
+    return fruit;
 }
 
 async function displayAllFruit() {
