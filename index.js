@@ -143,12 +143,6 @@ function showResultsTooltip() {
 }
 
 function showRetailPriceSliderTooltip() {
-    if (firstTime) {
-        firstTime = false;
-    } else {
-        return;
-    }
-    
     d3.select('svg').html("");
 
     const annotations = [
