@@ -2,6 +2,9 @@ const jsonUrl = 'data.json';
 const DEFAULT_FORM = "Filter by form";
 let globalForm = DEFAULT_FORM;
 let globalPrice = 1000;
+let firstPriceSliderClick = true;
+let firstFruitFormClick = true;
+let firstFruitResultsClick = true;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
@@ -72,6 +75,12 @@ async function displayAllFruit() {
 }
 
 function showFormFruitTooltip() {
+    if (firstFruitFormClick) {
+        firstFruitFormClick = false;
+    } else {
+        return;
+    }
+
     const annotations = [
         {
             note: {
@@ -105,6 +114,12 @@ function showFormFruitTooltip() {
 }
 
 function showResultsTooltip() {
+    if (firstFruitResultsClick) {
+        firstFruitResultsClick = false;
+    } else {
+        return;
+    }
+
     d3.select('svg').remove();
 
     const annotations = [
@@ -143,6 +158,12 @@ function showResultsTooltip() {
 }
 
 function showRetailPriceSliderTooltip() {
+    if (firstPriceSliderClick) {
+        firstPriceSliderClick = false;
+    } else {
+        return;
+    }
+
     d3.select('svg').remove();
 
     const annotations = [
