@@ -18,12 +18,7 @@ async function filterFruitByForm(form) {
         });
     });
 
-    const container = d3.select("#container");
-    container.selectAll("p")
-    .data(fruit)
-    .enter()
-    .append("p")
-    .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+    updateResults(fruit);
     
     return fruit;
 }
@@ -42,14 +37,26 @@ async function filterFruitByPrice(price) {
         });
     });
 
-    const container = d3.select("#container");
-    container.selectAll("p")
-    .data(fruit)
-    .enter()
-    .append("p")
-    .text(d => `${d.Fruit},  price: ${d.RetailPrice}`);
+    updateResults(fruit);
     
     return fruit;
+}
+
+function updateResults(fruit) {
+    const container = d3.select("#container");
+
+    if (fruit.length > 0) {
+        container.selectAll("p")
+        .data(fruit)
+        .enter()
+        .append("p")
+        .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+    } else {
+        container.selectAll("p")
+        .enter()
+        .append("p")
+        .text("No results match your filter criteria");
+    }
 }
 
 async function displayAllFruit() {
@@ -61,12 +68,7 @@ async function displayAllFruit() {
         });
     });
 
-    const container = d3.select("#container");
-    container.selectAll("p")
-    .data(fruit)
-    .enter()
-    .append("p")
-    .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+    updateResults(fruit);
     
     return fruit;
 }
