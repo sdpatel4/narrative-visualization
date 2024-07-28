@@ -1,7 +1,7 @@
 const jsonUrl = 'data.json';
 let globalForm = "";
 let globalPrice = 1000;
-const firstTime = true;
+let firstTime = true;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
