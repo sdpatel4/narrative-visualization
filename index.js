@@ -48,11 +48,19 @@ function updateResults(fruit) {
     const container = d3.select("#container");
 
     if (fruit.length > 0) {
+        // container.selectAll("p")
+        // .data(fruit)
+        // .enter()
+        // .append("p")
+        // .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
         container.selectAll("p")
         .data(fruit)
         .enter()
         .append("p")
-        .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
+        .text(d => `${d.Fruit}`)
+        .on("click", function(event, d) {
+            d3.select(this).text(`${d.Fruit}, price: ${d.RetailPrice}`);
+        });
     } else {
         container.html("");
         container.select("p")
