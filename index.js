@@ -101,11 +101,11 @@ function showRetailPriceSliderTooltip() {
     .call(makeAnnotations);
 }
 
-function hideTooltip() {
+async function hideTooltip() {
     d3.select("svg").html("");
 }
 
-function getMaxRetailPrice() {
+async function getMaxRetailPrice() {
     let max = 0;
 
     await d3.json(jsonUrl).then(function(data) {
