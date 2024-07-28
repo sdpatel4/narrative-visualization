@@ -136,7 +136,7 @@ function showFormFruitTooltip() {
         {
             note: {
             title: "",
-            label: "Use this dropdown to filter by fruit form. Click here to continue."
+            label: "Fruit can come in many forms! We can stay healthy in different ways. Use this dropdown to filter by fruit form. Click here to continue."
             },
             x: 200,
             y: 160,
@@ -223,7 +223,7 @@ function showRetailPriceSliderTooltip() {
         {
             note: {
             title: "",
-            label: "Use this slider to filter by retail price. Click here to continue."
+            label: "Our budgets can change month to month, so we have to be flexible. Use this slider to filter by retail price. Click here to continue."
             },
             x: 200,
             y: 160,
