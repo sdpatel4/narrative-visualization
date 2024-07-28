@@ -91,6 +91,7 @@ function showFormFruitTooltip() {
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
+    .style("top", 50);
     svg.append("g")
     .attr("class", "annotation-group")
     .style("transform", "translateX(-150px)")
@@ -126,7 +127,7 @@ function showRetailPriceSliderTooltip() {
     .attr("height", 150)
     .style("position", "absolute")
     .style("transform", "translateX(200px)")
-    .style("top", "20px");
+    .style("top", "50px");
     svg.append("g")
     .style("transform", "translateX(-120px)")
     .attr("class", "annotation-group")
