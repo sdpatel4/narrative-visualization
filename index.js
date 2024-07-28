@@ -163,7 +163,7 @@ function showResultsTooltip() {
         d3.select("#retailPrice").attr("disabled", null);
         hideTooltip();
         updateSubheaderText();
-        d3.select("#toolbar").attr("marginTop", "0");
+        d3.select("#toolbar").style("margin-top", "0");
     });
 }
 
@@ -218,6 +218,7 @@ function updateSubheaderText() {
     d3.select("h1")
     .append("h1")
     .text(`Showing ${form} fruits below the price of $${globalPrice}`)
+    .style("font-size", "24px");
     .attr("id", "subheader");
 }
 
