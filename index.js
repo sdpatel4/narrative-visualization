@@ -72,7 +72,7 @@ function showFormFruitTooltip() {
 
 function showRetailPriceSliderTooltip() {
     d3.select('svg').html("");
-    d3.select("#retailPrice").attr("disabled", "false");
+    d3.select("#retailPrice").attr("disabled", null);
 
     const annotations = [
         {
