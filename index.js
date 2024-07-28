@@ -28,7 +28,7 @@ async function filterFruitByForm(form) {
 }
 
 async function filterFruitByPrice(price) {
-    d3.select("#container").remove();
+    d3.select("#container").html("");
     globalPrice = price;
 
     const fruit = [];
@@ -47,8 +47,6 @@ async function filterFruitByPrice(price) {
     .enter()
     .append("p")
     .text(d => `${d.Fruit},  price: ${d.RetailPrice}`);
-
-    console.log(fruit);
     
     return fruit;
 }
