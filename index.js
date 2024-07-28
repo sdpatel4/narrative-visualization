@@ -51,7 +51,7 @@ async function filterFruitByPrice(price) {
 }
 
 async function displayAllFruit() {
-    fruit = []
+    fruit = [];
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
@@ -95,11 +95,14 @@ function showFormFruitTooltip() {
     .attr("class", "annotation-group")
     .style("transform", "translateX(-150px)")
     .call(makeAnnotations);
+
+    svg.on("click", function() {
+        showRetailPriceSliderTooltip();
+    });
 }
 
 function showRetailPriceSliderTooltip() {
     d3.select('svg').html("");
-    d3.select("#retailPrice").attr("disabled", null);
 
     const annotations = [
         {
@@ -128,6 +131,11 @@ function showRetailPriceSliderTooltip() {
     .style("transform", "translateX(-120px)")
     .attr("class", "annotation-group")
     .call(makeAnnotations);
+
+    svg.on("click", function() {
+        d3.select("#fruitform").attr("disabled", null);
+        d3.select("#retailPrice").attr("disabled", null);
+    });
 }
 
 function hideTooltip() {
