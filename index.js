@@ -59,19 +59,19 @@ function showFormFruitTooltip() {
     const makeAnnotations = d3.annotation()
     .annotations(annotations);
 
-    const svg = d3.select("#tooltip")
+    const svg = d3.select("body")
     .append("svg")
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
-    svg.enter().append("g")
+    svg.append("g")
     .attr("class", "annotation-group")
     .style("transform", "translateX(-150px)")
     .call(makeAnnotations);
 }
 
 function showRetailPriceSliderTooltip() {
-    d3.select('#tooltip').html("");
+    d3.select('svg').html("");
 
     const annotations = [
         {
@@ -89,12 +89,12 @@ function showRetailPriceSliderTooltip() {
     const makeAnnotations = d3.annotation()
     .annotations(annotations);
 
-    const svg = d3.select("#tooltip")
+    const svg = d3.select("body")
     .append("svg")
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
-    svg.enter().append("g")
+    svg.append("g")
     .attr("class", "annotation-group")
     .style("transform", "translateX(-150px)")
     .call(makeAnnotations);
