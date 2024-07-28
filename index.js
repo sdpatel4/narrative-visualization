@@ -54,6 +54,7 @@ function updateResults(fruit) {
         .append("p")
         .text(d => `${d.Fruit}, price: ${d.RetailPrice}`);
     } else {
+        container.html("");
         container.select("p")
         .append("p")
         .text("No results match your filter criteria");
