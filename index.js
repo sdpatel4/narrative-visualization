@@ -74,7 +74,7 @@ function showFormFruitTooltip() {
         {
             note: {
             title: "",
-            label: "Use this dropdown to filter by fruit form. Click to continue."
+            label: "Use this dropdown to filter by fruit form. Click here to continue."
             },
             x: 200,
             y: 160,
@@ -108,7 +108,7 @@ function showRetailPriceSliderTooltip() {
         {
             note: {
             title: "",
-            label: "Use this slider to filter by retail price. Interact to continue."
+            label: "Use this slider to filter by retail price. Click here to continue."
             },
             x: 200,
             y: 160,
@@ -135,6 +135,7 @@ function showRetailPriceSliderTooltip() {
     svg.on("click", function() {
         d3.select("#fruitform").attr("disabled", null);
         d3.select("#retailPrice").attr("disabled", null);
+        hideTooltip();
     });
 }
 
