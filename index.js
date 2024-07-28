@@ -72,12 +72,13 @@ function showFormFruitTooltip() {
 
 function showRetailPriceSliderTooltip() {
     d3.select('svg').html("");
+    d3.select("#retailPrice").attr("disabled", "false");
 
     const annotations = [
         {
             note: {
             title: "",
-            label: "Use this dropdown to filter by retail price. Interact to continue."
+            label: "Use this slider to filter by retail price. Interact to continue."
             },
             x: 200,
             y: 160,
@@ -94,9 +95,10 @@ function showRetailPriceSliderTooltip() {
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
-    .style("transform", "translateX(300px)")
+    .style("transform", "translateX(200px)")
     .style("top", "20px");
     svg.append("g")
+    .style("transform", "translateX(-120px)")
     .attr("class", "annotation-group")
     .call(makeAnnotations);
 }

@@ -9,7 +9,7 @@
             showFormFruitTooltip();
         </script>
         <h1>Fruit prices in 2022</h1>
-        <div style="display: flex; margin-top: 100px; gap: 48px;">
+        <div style="display: flex; margin-top: 120px; gap: 48px;">
             <select
                 id="fruitform" 
                 onchange="filterFruitByForm(this.value)"
@@ -24,7 +24,7 @@
             </select>
             <div>
                 <label for="retailPrice">Retail price in dollars: </label>
-                <input type="range" id="retailPrice" name="retailPrice" min="getMinRetailPrice()" max="getMaxRetailPrice()" />
+                <input disabled="true" type="range" id="retailPrice" name="retailPrice" min="getMinRetailPrice()" max="getMaxRetailPrice()" />
             </div>
         </div>
         <div id="container" style="display: grid; grid-template-columns: 1fr 1fr 1fr;"></div>
