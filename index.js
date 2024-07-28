@@ -2,9 +2,9 @@ const jsonUrl = 'data.json';
 const DEFAULT_FORM = "Filter by form";
 let globalForm = DEFAULT_FORM;
 let globalPrice = 1000;
-let firstPriceSliderClick = true;
-let firstFruitFormClick = true;
-let firstFruitResultsClick = true;
+let isPriceTutorialClicked = false;
+let isFormTooltipClicked = false;
+let isResultsTooltipClicked = false;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
@@ -76,10 +76,10 @@ async function displayAllFruit() {
 }
 
 function showFormFruitTooltip() {
-    if (firstFruitFormClick) {
-        firstFruitFormClick = false;
-    } else {
+    if (isFormTooltipClicked) {
         return;
+    } else {
+        isFormTooltipClicked = true;
     }
 
     const annotations = [
@@ -115,10 +115,10 @@ function showFormFruitTooltip() {
 }
 
 function showResultsTooltip() {
-    if (firstFruitResultsClick) {
-        firstFruitResultsClick = false;
-    } else {
+    if (isResultsTooltipClicked) {
         return;
+    } else {
+        isResultsTooltipClicked = true;
     }
 
     d3.select('svg').remove();
@@ -159,10 +159,10 @@ function showResultsTooltip() {
 }
 
 function showRetailPriceSliderTooltip() {
-    if (firstPriceSliderClick) {
-        firstPriceSliderClick = false;
-    } else {
+    if (isPriceTutorialClicked) {
         return;
+    } else {
+        isPriceTutorialClicked = true;
     }
 
     d3.select('svg').remove();
@@ -198,6 +198,10 @@ function showRetailPriceSliderTooltip() {
     svg.on("click", function() {
         showResultsTooltip();
     });
+}
+
+function isTutorialComplete() {
+    return isPriceTutorialClicked && isFormTooltipClicked && isResultsTooltipClicked;
 }
 
 function hideTooltip() {
