@@ -58,8 +58,7 @@ function updateResults(fruit) {
         .text(d => `Price ${d.RetailPriceUnit}: ${d.RetailPrice}`);
     } else {
         container.html("");
-        container.select("p")
-        .append("p")
+        container.append("p")
         .text("No results match your filter criteria");
     }
 
