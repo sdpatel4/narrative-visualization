@@ -1,13 +1,16 @@
 const jsonUrl = 'data.json';
+let globalForm = "";
+let globalPrice = 1000;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
+    globalForm = form;
 
     const fruit = [];
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (f.Form === form) {
+            if (f.Form === form && f.RetailPrice <= globalPrice) {
                 fruit.push(f);
             }
         });
@@ -25,12 +28,13 @@ async function filterFruitByForm(form) {
 
 async function filterFruitByPrice(price) {
     d3.select("#container").html("");
+    globalPrice = price;
 
     const fruit = [];
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (f.RetailPrice <= price) {
+            if (f.RetailPrice <= price && f.Form === globalForm) {
                 fruit.push(f);
             }
         });
