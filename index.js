@@ -218,7 +218,7 @@ function updateSubheaderText() {
     d3.select("h1")
     .append("h1")
     .text(`Showing ${form} fruits below the price of $${globalPrice}`)
-    .style("font-size", "24px");
+    .style("font-size", "24px")
     .attr("id", "subheader");
 }
 
