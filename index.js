@@ -27,6 +27,7 @@ async function filterFruitByForm(form) {
 }
 
 async function filterFruitByPrice(price) {
+    console.log(price);
     d3.select("#container").html("");
     globalPrice = price;
 
