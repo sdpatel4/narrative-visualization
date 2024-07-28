@@ -2,7 +2,6 @@ const jsonUrl = 'data.json';
 const DEFAULT_FORM = "Filter by form";
 let globalForm = DEFAULT_FORM;
 let globalPrice = 1000;
-let firstTime = true;
 
 async function filterFruitByForm(form) {
     d3.select("#container").html("");
@@ -105,6 +104,44 @@ function showFormFruitTooltip() {
     });
 }
 
+function showResultsTooltip() { 
+    d3.select('svg').html("");
+
+    const annotations = [
+        {
+            note: {
+            title: "",
+            label: "Results below contain the fruit name and price, filtered by the fruit form and price criteria."
+            },
+            x: 200,
+            y: 160,
+            dy: -50,
+            dx: 50
+        }
+    ];
+
+    const makeAnnotations = d3.annotation()
+    .annotations(annotations);
+
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", 250)
+    .attr("height", 150)
+    .style("position", "absolute")
+    .style("transform", "translateX(200px)")
+    .style("top", "50px");
+    svg.append("g")
+    .style("transform", "translateX(-120px)")
+    .attr("class", "annotation-group")
+    .call(makeAnnotations);
+
+    svg.on("click", function() {
+        d3.select("#fruitform").attr("disabled", null);
+        d3.select("#retailPrice").attr("disabled", null);
+        hideTooltip();
+    });
+}
+
 function showRetailPriceSliderTooltip() {
     if (firstTime) {
         firstTime = false;
@@ -143,9 +180,7 @@ function showRetailPriceSliderTooltip() {
     .call(makeAnnotations);
 
     svg.on("click", function() {
-        d3.select("#fruitform").attr("disabled", null);
-        d3.select("#retailPrice").attr("disabled", null);
-        hideTooltip();
+        showResultsTooltip();
     });
 }
 
