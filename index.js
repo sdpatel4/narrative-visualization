@@ -214,10 +214,18 @@ function isTutorialComplete() {
 }
 
 function updateSubheaderText() {
-    const form = globalForm === DEFAULT_FORM ? "all" : `${globalForm}`;
+    let form = "";
+    if (globalForm === DEFAULT_FORM) {
+        form = "all fruits";
+    } else if (globalForm === "Juice") {
+        form = "juice";
+    } else {
+        form = `${globalForm} fruits`;
+    }
+
     d3.select("h1")
     .append("h1")
-    .text(`Showing ${form} fruits below the price of $${globalPrice}`)
+    .text(`Showing ${form.toLowerCase()} below the price of $${globalPrice}`)
     .style("font-size", "24px")
     .attr("id", "subheader");
 }
