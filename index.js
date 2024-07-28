@@ -1,7 +1,7 @@
 const jsonUrl = 'data.json';
 const DEFAULT_FORM = "Filter by form";
 let globalForm = DEFAULT_FORM;
-let globalPrice = 1000;
+let globalPrice = 4.2;
 let isPriceTutorialClicked = false;
 let isFormTooltipClicked = false;
 let isResultsTooltipClicked = false;
