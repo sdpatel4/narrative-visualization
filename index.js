@@ -140,5 +140,5 @@ function showRetailPriceSliderTooltip() {
 }
 
 function hideTooltip() {
-    d3.select("svg").html("");
+    d3.selectAll("svg").html("");
 }
