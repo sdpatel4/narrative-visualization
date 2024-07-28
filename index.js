@@ -111,7 +111,7 @@ function showResultsTooltip() {
         {
             note: {
             title: "",
-            label: "Results below contain the fruit name and price. Click to continue."
+            label: "Results below contain the fruit name and price. Click here to continue."
             },
             x: 200,
             y: 160,
