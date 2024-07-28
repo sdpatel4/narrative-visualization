@@ -63,6 +63,7 @@ function updateResults(fruit) {
     }
 
     if (isTutorialComplete()) {
+        d3.select("#subheader").remove();
         updateSubheaderText();
     }
 }
@@ -162,7 +163,7 @@ function showResultsTooltip() {
         d3.select("#retailPrice").attr("disabled", null);
         hideTooltip();
         updateSubheaderText();
-        d3.select("#toolbar").attr("margin-top", "0");
+        d3.select("#toolbar").attr("marginTop", "0");
     });
 }
 
@@ -215,8 +216,9 @@ function isTutorialComplete() {
 function updateSubheaderText() {
     const form = globalForm === DEFAULT_FORM ? "all" : `${globalForm}`;
     d3.select("h1")
-    .append("h4")
-    .text(`Showing ${form} fruits below the price of ${globalPrice}`);
+    .append("h1")
+    .text(`Showing ${form} fruits below the price of $${globalPrice}`)
+    .attr("id", "subheader");
 }
 
 function hideTooltip() {
