@@ -108,14 +108,14 @@ function showFirstTooltip() {
 
     const svg = d3.select("body")
     .append("svg")
-    .attr("width", 250)
-    .attr("height", 150)
+    .attr("width", 300)
+    .attr("height", 200)
     .style("position", "absolute")
     .style("transform", "translate(300px, 0)")
     .style("top", 50);
     svg.append("g")
     .attr("class", "annotation-group")
-    .style("transform", "translate(-200px, -150px)")
+    .style("transform", "translate(-200px, -200px)")
     .call(makeAnnotations);
 
     svg.on("click", function() {
