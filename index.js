@@ -157,6 +157,7 @@ function showResultsTooltip() {
         d3.select("#fruitform").attr("disabled", null);
         d3.select("#retailPrice").attr("disabled", null);
         hideTooltip();
+        showSubheaderText();
     });
 }
 
@@ -202,8 +203,10 @@ function showRetailPriceSliderTooltip() {
     });
 }
 
-function isTutorialComplete() {
-    return isPriceTutorialClicked && isFormTooltipClicked && isResultsTooltipClicked;
+function showSubheaderText() {
+    d3.select("h1")
+    .append("h2")
+    .text("Header 2");
 }
 
 function hideTooltip() {
