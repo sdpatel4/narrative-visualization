@@ -83,7 +83,6 @@ async function displayAllFruit() {
     return fruit;
 }
 
-/**  */
 function showFirstTooltip() {
     if (isOverviewTooltipClicked) {
         return;
@@ -95,7 +94,7 @@ function showFirstTooltip() {
         {
             note: {
             title: "",
-            label: "The cost to stay healthy is higher than it ever was. Let's find fruits within your budget using this tool."
+            label: "The cost to stay healthy is very high. Let's find fruits in your budget with this tool. Click here to continue."
             },
             x: 200,
             y: 160,
@@ -112,10 +111,11 @@ function showFirstTooltip() {
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
+    .style("transform", "translate(300px, 0)")
     .style("top", 50);
     svg.append("g")
     .attr("class", "annotation-group")
-    .style("transform", "translateX(-150px)")
+    .style("transform", "translate(-200px, -150px)")
     .call(makeAnnotations);
 
     svg.on("click", function() {
