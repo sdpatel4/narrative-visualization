@@ -10,7 +10,7 @@ async function filterFruitByForm(form) {
 
     await d3.json(jsonUrl).then(function(data) {
         data.forEach(f => {
-            if (f.Form === form && f.RetailPrice <= globalPrice) {
+            if ((f.Form === form || form === "Please choose a form") && f.RetailPrice <= globalPrice) {
                 fruit.push(f);
             }
         });
