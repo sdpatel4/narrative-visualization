@@ -59,7 +59,7 @@ function showFormFruitTooltip() {
     const makeAnnotations = d3.annotation()
     .annotations(annotations);
 
-    const svg = d3.select("#tooltip")
+    const svg = d3.select("body")
     .append("svg")
     .attr("width", 250)
     .attr("height", 150)
@@ -89,7 +89,7 @@ function showRetailPriceSliderTooltip() {
     const makeAnnotations = d3.annotation()
     .annotations(annotations);
 
-    const svg = d3.select("#tooltip")
+    const svg = d3.select("body")
     .append("svg")
     .attr("width", 250)
     .attr("height", 150)
