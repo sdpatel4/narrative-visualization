@@ -94,10 +94,10 @@ function showRetailPriceSliderTooltip() {
     .attr("width", 250)
     .attr("height", 150)
     .style("position", "absolute")
+    .style("transform", "translateX(300px)")
+    .style("top", "20px");
     svg.append("g")
     .attr("class", "annotation-group")
-    .style("transform", "translateX(300px)")
-    .style("top", "20px")
     .call(makeAnnotations);
 }
 
